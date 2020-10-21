@@ -24,7 +24,7 @@
 
 ```
 # CSPの作成
-./als.py -m0 --bc=sinz 10 >/tmp/als.csp
+./als.py -m0 10 >/tmp/als.csp
 # Sugarの実行
 sugar -vv /tmp/als.csp >/tmp/als.log
 # 結果の検証
@@ -78,7 +78,9 @@ sugar -vv /tmp/qdp.csp >/tmp/qdp.log
 ```
 
 - `n` : AISの要素の個数
-- `-m` : 制約モデルの番号を指定する (`0`, `1`)
+- `-m` : 制約モデルの番号を指定する
+    - `-m0` : 各行と各列にはexact1制約，各対角線にはatmost1制約を使用
+    - `-m1` : 各対角線に対しクイーンの有無を表す補助ブール変数を導入し，その和がnに等しい制約を追加
 - `--bc=` : ブール基数制約の符号化方法を指定する (`sugar`, `sinz`, `sinz2`)
 - `-v` : Sugarの解の検証
 
