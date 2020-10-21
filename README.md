@@ -77,7 +77,7 @@ sugar -vv /tmp/qdp.csp >/tmp/qdp.log
 ./nqueens.py [options] n
 ```
 
-- `n` : チェス盤のサイズ (クイーンの個数)
+- `n` : クイーングラフのサイズ ($n\times n$)，クイーンの個数 ($n$)
 - `-m` : 制約モデルの番号を指定する
     - `-m0` : 各行と各列にはexact1制約，各対角線にはatmost1制約を使用
     - `-m1` : 各対角線に対しクイーンの有無を表す補助ブール変数を導入し，その和がnに等しい制約を追加
@@ -106,7 +106,7 @@ sugar -vv /tmp/nqueens.csp >/tmp/nqueens.log
 ./qgcp.py [options] n
 ```
 
-- `n` : クイーングラフのサイズ
+- `n` : クイーングラフのサイズ ($n\times n$)，色数 ($n$)
 - `-m` : 制約モデルの番号を指定する
     - `-m0` : Sugarのalldifferentを使用
     - `-m1` : alldifferentに大野の方法を使用
