@@ -60,7 +60,7 @@ def verify(n):
 """
 def main():
     global opts
-    o, args = getopt.getopt(sys.argv[1:], "hvm:x", ["bc="])
+    o, args = getopt.getopt(sys.argv[1:], "hvm:", ["bc="])
     opts = dict(o)
     if "-h" in opts or len(args) != 1:
         print("Usage: %s n" % sys.argv[0])
