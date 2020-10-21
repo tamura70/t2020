@@ -154,3 +154,34 @@ sugar -vv /tmp/costasarray.csp >/tmp/costasarray.log
 ./costasarray.py -v 5 </tmp/costasarray.log
 ```
 
+## util.py
+
+以下のようにして動作を確認できる．
+
+```
+$ python -i util.py 
+>>> new_name()
+'_T1'
+>>> new_name()
+'_T2'
+>>> v("x", 1, 2)
+'x_1_2'
+>>> t("x", 1, 2)
+'_x_1_2'
+>>> c("+", 1, 2)
+'(+ 1 2)'
+>>> c("+", 1, c("+", 2, 3, 4))
+'(+ 1 (+ 2 3 4))'
+>>> atleast_1(["x1","x2","x3"])
+; atleast_1 x1 x2 x3
+(or (> x1 0) (> x2 0) (> x3 0))
+>>> atleast_1([v("x",1),v("x",2),v("x",3)])
+; atleast_1 x_1 x_2 x_3
+(or (> x_1 0) (> x_2 0) (> x_3 0))
+>>> atmost_1([v("x",1),v("x",2),v("x",3)])
+; atmost_1 x_1 x_2 x_3
+(<= (+ x_1 x_2) 1)
+(<= (+ x_1 x_3) 1)
+(<= (+ x_2 x_3) 1)
+>>> quit()
+```
