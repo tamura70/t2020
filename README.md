@@ -26,7 +26,7 @@
 # CSPの作成
 ./als.py -m0 --bc=sinz 10 >/tmp/als.csp
 # Sugarの実行
-sugar /tmp/als.csp >/tmp/als.log
+sugar -vv /tmp/als.csp >/tmp/als.log
 # 結果の検証
 ./als.py -v 10 </tmp/als.log
 ```
@@ -60,7 +60,7 @@ sugar /tmp/als.csp >/tmp/als.log
 # CSPの作成
 ./qdp.py -m0 --bc=sinz 8 5 >/tmp/qdp.csp
 # Sugarの実行
-sugar /tmp/qdp.csp >/tmp/qdp.log
+sugar -vv /tmp/qdp.csp >/tmp/qdp.log
 # 結果の検証
 ./qdp.py -v 8 5 </tmp/qdp.log
 ```
@@ -88,7 +88,7 @@ sugar /tmp/qdp.csp >/tmp/qdp.log
 # CSPの作成
 ./nqueens.py -m0 --bc=sinz 8 >/tmp/nqueens.csp
 # Sugarの実行
-sugar /tmp/nqueens.csp >/tmp/nqueens.log
+sugar -vv /tmp/nqueens.csp >/tmp/nqueens.log
 # 結果の検証
 ./nqueens.py -v 8 </tmp/nqueens.log
 ```
@@ -118,7 +118,7 @@ sugar /tmp/nqueens.csp >/tmp/nqueens.log
 # CSPの作成
 ./qgcp.py -m0 --bc=sinz 5 >/tmp/qgcp.csp
 # Sugarの実行
-sugar /tmp/qgcp.csp >/tmp/qgcp.log
+sugar -vv /tmp/qgcp.csp >/tmp/qgcp.log
 # 結果の検証
 ./qgcp.py -v 5 </tmp/qgcp.log
 ```
@@ -147,7 +147,7 @@ sugar /tmp/qgcp.csp >/tmp/qgcp.log
 # CSPの作成
 ./costasarray.py -m0 5 >/tmp/costasarray.csp
 # Sugarの実行
-sugar /tmp/costasarray.csp >/tmp/costasarray.log
+sugar -vv /tmp/costasarray.csp >/tmp/costasarray.log
 # 結果の検証
 ./costasarray.py -v 5 </tmp/costasarray.log
 ```
