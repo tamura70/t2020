@@ -10,10 +10,10 @@ csp = "/tmp/testall.csp"
 log = "/tmp/testall.log"
 
 """
-als.py
+ais.py
 """
-def test_als():
-    cmd = "./als.py"
+def test_ais():
+    cmd = "./ais.py"
     n = 8
     for opts in ["-m0", "-m0 -t"]:
         cmd1 = f"{cmd} {opts} {n}"
@@ -91,7 +91,7 @@ def run(cmd):
 メイン
 """
 def main():
-    test_als()
+    test_ais()
     test_qdp()
     test_nqueens()
     test_qgcp()

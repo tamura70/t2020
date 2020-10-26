@@ -5,7 +5,7 @@
 ### 利用方法
 
 ```
-./als.py [options] n
+./ais.py [options] n
 ```
 
 - `n` : AISの要素の個数
@@ -24,11 +24,11 @@
 
 ```
 # CSPの作成
-./als.py -m0 10 >/tmp/als.csp
+./ais.py -m0 10 >/tmp/ais.csp
 # Sugarの実行
-sugar -vv /tmp/als.csp >/tmp/als.log
+sugar -vv /tmp/ais.csp >/tmp/ais.log
 # 結果の検証
-./als.py -v 10 </tmp/als.log
+./ais.py -v 10 </tmp/ais.log
 ```
 
 ## Queen Domination Problem (QDP)
@@ -193,22 +193,22 @@ $ python -i util.py
 例えば以下のようにして生成されるCSPの内容を確認する．
 
 ```
-./als.py -m0 -t 5 | less
+./ais.py -m0 -t 5 | less
 ```
 
 また，Sugarで実行できるかどうかを確認する．
 
 ```
-./als.py -m0 -t 5 >/tmp/als.csp
-sugar -vv /tmp/als.csp
+./ais.py -m0 -t 5 >/tmp/ais.csp
+sugar -vv /tmp/ais.csp
 ````
 
 #### 正しい解が得られているかどうかを確認
 
 ```
-./als.py -m0 -t 5 >/tmp/als.csp
-sugar -vv /tmp/als.csp >/tmp/als.log 2>&1
-./als.py -v 5 </tmp/als.log
+./ais.py -m0 -t 5 >/tmp/ais.csp
+sugar -vv /tmp/ais.csp >/tmp/ais.log 2>&1
+./ais.py -v 5 </tmp/ais.log
 ```
 
 - `2>&1` は標準エラー出力を標準出力にリダイレクトする
@@ -217,22 +217,22 @@ sugar -vv /tmp/als.csp >/tmp/als.log 2>&1
 Sugarの実行結果をコンソールにも表示したい場合は以下のようにする．
 
 ```
-./als.py -m0 -t 5 >/tmp/als.csp
-sugar -vv /tmp/als.csp 2>&1 | tee /tmp/als.log
-./als.py -v 5 </tmp/als.log
+./ais.py -m0 -t 5 >/tmp/ais.csp
+sugar -vv /tmp/ais.csp 2>&1 | tee /tmp/ais.log
+./ais.py -v 5 </tmp/ais.log
 ```
 
 #### 大きなパラメータで実行してみる
 
 ```
-./als.py -m0 -t 20 >/tmp/als.csp
-sugar -vv /tmp/als.csp >/tmp/als.log 2>&1 &
+./ais.py -m0 -t 20 >/tmp/ais.csp
+sugar -vv /tmp/ais.csp >/tmp/ais.log 2>&1 &
 バックグラウンド処理が終了するまで待つ
-./als.py -v 20 </tmp/als.log
+./ais.py -v 20 </tmp/ais.log
 ```
 
 - `&` はバックグラウンド処理
-- `tail -f /tmp/als.log` で出力を確認できる (C-cで終了)．
+- `tail -f /tmp/ais.log` で出力を確認できる (C-cで終了)．
 - `jobs` でバックグラウンド処理が終了したかどうかを確認できる
 - 処理を中断したければ `kill %1` などを実行する
 
